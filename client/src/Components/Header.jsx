@@ -2,6 +2,7 @@ import { FaSearch } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { GiHouse } from "react-icons/gi";
 
 export default function Header() {
   const { currentUser } = useSelector((state) => state.user);
@@ -26,9 +27,12 @@ export default function Header() {
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-slate-500">Real</span>
-            <span className="text-slate-700">Estate</span>
+          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap justify-center items-center">
+          
+            <GiHouse />
+            <span className="text-slate-500 pl-2">Property</span>
+            <span className="text-slate-700">Ease</span>
+            
           </h1>
         </Link>
         <form
