@@ -9,12 +9,13 @@ const Signup = () => {
   const [loading, setloading] = useState(false);
   const navigate = useNavigate();
 
-  const handelChange = (e) => {
+  const handleChange = (e) => {
     setformData({
       ...formData,
       [e.target.id]: e.target.value,
     });
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -50,21 +51,21 @@ const Signup = () => {
       <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
-          onChange={handelChange}
+          onChange={handleChange}
           type="text"
           placeholder="username"
           className="border p-3 rounded-lg "
           id="username"
         />
         <input
-          onChange={handelChange}
+          onChange={handleChange}
           type="text"
           placeholder="email"
           className="border p-3 rounded-lg "
           id="email"
         />
         <input
-          onChange={handelChange}
+          onChange={handleChange}
           type="text"
           placeholder="password"
           className="border p-3 rounded-lg "

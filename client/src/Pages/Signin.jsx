@@ -12,7 +12,7 @@ const Signin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handelChange = (e) => {
+  const handleChange = (e) => {
     setformData({
       ...formData,
       [e.target.id]: e.target.value,
@@ -32,7 +32,7 @@ const Signin = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
+      //console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data.message));
         return;
@@ -40,7 +40,6 @@ const Signin = () => {
       dispatch(signInSuccess(data));
       navigate('/');
 
-      console.log(data);
     } catch (error) {
       dispatch(signInFailure(error.message));
     }
@@ -52,14 +51,14 @@ const Signin = () => {
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
        
         <input
-          onChange={handelChange}
+          onChange={handleChange}
           type="text"
           placeholder="email"
           className="border p-3 rounded-lg "
           id="email"
         />
         <input
-          onChange={handelChange}
+          onChange={handleChange}
           type="text"
           placeholder="password"
           className="border p-3 rounded-lg "
